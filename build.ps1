@@ -22,11 +22,3 @@ Move-Item -Path $Path/UniverseLib.ML.IL2CPP.Interop.dll -Destination $Path/UserL
 # (create zip archive)
 Remove-Item $Path/../CinematicUnityExplorer.MelonLoader.IL2CPP.CoreCLR.zip -ErrorAction SilentlyContinue
 compress-archive .\$Path\* $Path/../CinematicUnityExplorer.MelonLoader.IL2CPP.CoreCLR.zip
-
-# ----------- Editor (mono) -----------
-$Path1 = "Release/CinematicUnityExplorer.Standalone.Mono"
-$Path2 = "UnityEditorPackage/Runtime"
-Copy-Item $Path1/CinematicUnityExplorer.STANDALONE.Mono.dll -Destination $Path2
-Copy-Item $Path1/UniverseLib.Mono.dll -Destination $Path2
-Remove-Item Release/CinematicUnityExplorer.Editor.zip -ErrorAction SilentlyContinue
-compress-archive .\UnityEditorPackage\*  Release/CinematicUnityExplorer.Editor.zip
